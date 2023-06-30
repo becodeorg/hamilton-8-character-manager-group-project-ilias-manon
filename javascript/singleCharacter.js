@@ -24,8 +24,9 @@ function displayData(data){
 }
 
 const buttonDelete=document.getElementById("buttonDeleteCharater");
-buttonDelete.addEventListener("click", deleteCharacter(data))
+buttonDelete.addEventListener("click", deleteCharacter(idCharacter))
 
-function deleteCharacter(data){
+function deleteCharacter(idCharacter){
     
 }
+
