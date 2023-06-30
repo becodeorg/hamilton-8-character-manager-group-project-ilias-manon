@@ -1,6 +1,7 @@
 const imagediv = document.getElementById("character_picture")
+const postName = (new URLSearchParams(window.location.search)).get('id'); //window.location.search = URL actuel de ma page
 
-fetch("https://character-database.becode.xyz/characters/1ff1b635-0f7b-4588-be39-69d8b934a57b")
+fetch("https://character-database.becode.xyz/characters/" + postName )
 .then(response => response.json())
 .then (data => displayData(data));
 //the function displayData is to display the information contained in the object (array)
