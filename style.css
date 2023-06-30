@@ -1,6 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   background-color: aquamarine;
 }
+#singleCharacterBody section {
+  background-color: aliceblue;
+}
+
+#image_character_div {
+  display: flex;
+  justify-content: center;
+}
+#image_character_div img {
+  width: 25vw;
+  border-radius: 5px;
+  min-width: 200px;
+}
+
+#singleCharacterDescription {
+  border: 2px solid black;
+  border-radius: 25px;
+  background-color: rgb(223, 238, 251);
+}
+
+#button_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#button_div .button_character {
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
