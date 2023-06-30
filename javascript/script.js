@@ -58,7 +58,7 @@ async function cards() {
       clone.querySelector("#charactername").innerText = objet.name;
       clone.querySelector("#shortdescription").innerText = objet.shortDescription;
       clone.querySelector("#characterimg").setAttribute("src", "data:image/png;base64," + objet.image);
-  
+      clone.querySelector("#newpage").setAttribute("href", "/html/singleCharacter.html?id=" + objet.id);  
       // Ajoutez la carte clonée au parent
       getcontainer.appendChild(clone);
     });
