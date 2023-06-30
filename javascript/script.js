@@ -63,6 +63,7 @@ async function cards() {
       getcontainer.appendChild(clone);
     });
 
+
     const removefirst = document.getElementById("charactercontainer");
     removefirst.removeChild(removefirst.firstElementChild);
 }
