@@ -23,16 +23,27 @@ function displayData(data){
 }
 
 const buttonDelete=document.getElementById("buttonDeleteCharater");
-buttonDelete.addEventListener("click", deleteCharacter());
+buttonDelete.addEventListener("click", deleteCharacter);
 
 function deleteCharacter(){
-    console.log('func')
-    fetch("https://character-database.becode.xyz/characters/" +postName ,{method: 'DELETE'})
-    .then(response => {
-        if (response.ok){
-            console.log("DELETED")
-        }
-    })
+    if(confirm("Are you sure you want to delete this character?")){
+        fetch("https://character-database.becode.xyz/characters/" +postName ,{method: 'DELETE'})
+        .then(response => {
+            if (response.ok){
+                console.log("DELETED")
+            }
+            else{console.log("not deleted")}
+        })
+    }
+    else{
+        console.log("You did not delete this character");
+    }
+    
 
 }
+
+//linking with the edit page
+
+const buttonEdit=document.getElementById("buttonEditCharacter");
+buttonEdit.setAttribute("href", "editCharacter.html?id=" + postName);  
 
