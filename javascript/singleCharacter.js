@@ -1,6 +1,5 @@
-const imagediv = document.getElementById("character_picture")
+const imagediv = document.getElementById("character_picture");
 const postName = (new URLSearchParams(window.location.search)).get('id'); //window.location.search = URL actuel de ma page
-
 fetch("https://character-database.becode.xyz/characters/" + postName )
 .then(response => response.json())
 .then (data => displayData(data));
@@ -24,9 +23,16 @@ function displayData(data){
 }
 
 const buttonDelete=document.getElementById("buttonDeleteCharater");
-buttonDelete.addEventListener("click", deleteCharacter(idCharacter))
+buttonDelete.addEventListener("click", deleteCharacter());
 
-function deleteCharacter(idCharacter){
-    
+function deleteCharacter(){
+    console.log('func')
+    fetch("https://character-database.becode.xyz/characters/" +postName ,{method: 'DELETE'})
+    .then(response => {
+        if (response.ok){
+            console.log("DELETED")
+        }
+    })
+
 }
 
