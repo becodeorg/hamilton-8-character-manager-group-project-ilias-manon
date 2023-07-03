@@ -32,10 +32,18 @@ function deleteCharacter(){
             if (response.ok){
                 console.log("DELETED")
             }
+            else{console.log("not deleted")}
         })
     }
-    else{console.log("You did not delete this character")}
+    else{
+        console.log("You did not delete this character");
+    }
     
 
 }
+
+//linking with the edit page
+
+const buttonEdit=document.getElementById("buttonEditCharacter");
+buttonEdit.setAttribute("href", "editCharacter.html?id=" + postName);  
 
