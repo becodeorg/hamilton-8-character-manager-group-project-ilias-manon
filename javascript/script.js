@@ -28,15 +28,12 @@ test()
     
     
 //    jsonData.forEach(function(objet) {
-        // Clonez le modèle de carte initial
 //        var carteClone = document.getElementById("charactercontainer").appendChild(clone);
       
-        // Modifiez les éléments de la carte avec les valeurs de l'objet
 //        carteClone.querySelector("#charactername").innerText = objet.name;
 //        carteClone.querySelector("#shortdescription").innerText = objet.shortDescription;
 //        carteClone.querySelector("#characterimg").setAttribute("src", "data:image/png;base64," + objet.image);
       
-        // Ajoutez la carte clonée au parent
 //        getcontainer.appendChild(carteClone);
 //      });
 //};
@@ -51,13 +48,12 @@ async function cards() {
     const getcontainer = document.getElementById("charactercontainer");
   
     jsonData.forEach(function(objet) {
-      // Clonez le modèle de carte pour chaque objet
       const clone = document.getElementById("test").cloneNode(true);
   
-      // Modifiez les éléments de la carte avec les valeurs de l'objet
       clone.querySelector("#charactername").innerText = objet.name;
       clone.querySelector("#shortdescription").innerText = objet.shortDescription;
       clone.querySelector("#characterimg").setAttribute("src", "data:image/png;base64," + objet.image);
+      clone.querySelector("#newpage").setAttribute("href", "/html/singleCharacter.html?id=" + objet.id);  
       clone.querySelector("#newpage").setAttribute("href", "src/html/singleCharacter.html?id=" + objet.id);  
       // Ajoutez la carte clonée au parent
       getcontainer.appendChild(clone);
